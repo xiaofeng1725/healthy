@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>评估结果</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #89f7fe, #66a6ff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .result-box {
+            background-color: white;
+            padding: 30px 50px;
+            border-radius: 20px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            text-align: left;
+            max-width: 500px;
+        }
+
+        .result-box h2 {
+            text-align: center;
+        }
+
+        .result-box p {
+            font-size: 16px;
+            margin: 8px 0;
+        }
+
+        .result-box img {
+            display: block;
+            margin: 20px auto;
+            width: 80%;
+        }
+
+        .result-box a {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px 25px;
+            background-color: #3b82f6;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+        }
+
+        .result-box a:hover {
+            background-color: #2563eb;
+        }
+    </style>
+</head>
+<body>
+    <div class="result-box">
+        <h2>评估结果</h2>
+        <p><strong>BMI：</strong> {{ bmi }}</p>
+        <p><strong>身体状态：</strong> {{ status }}</p>
+        <p><strong>标准体重：</strong> {{ std_weight }} kg</p>
+        <p><strong>与标准体重差距：</strong> {{ diff_weight }} kg</p>
+        <p><strong>历史伤病：</strong> {{ history }}</p>
+        <p><strong>锻炼建议：</strong> {{ exercise }}</p>
+        <p><strong>饮食建议：</strong> {{ diet }}</p>
+        <img src="{{ chart_url }}" alt="体重图表">
+        <a href="/">返回首页</a>
+    </div>
+</body>
+</html>
