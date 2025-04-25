@@ -40,7 +40,7 @@ def result():
 
     # 生成图表
     labels = ['标准体重', '偏离体重']
-    values = [std_weight, abs(diff_weight)]
+    values = [std_weight, abs(diff_weight)]  # 确保为正数
     colors = ['#36a2eb', '#ff6384']
 
     plt.figure(figsize=(5,5))
@@ -59,5 +59,7 @@ def result():
                            diff_weight=diff_weight, exercise=exercise, diet=diet,
                            history=history, chart_url='/' + chart_path)
 
+#if __name__ == '__main__':
+    #app.run(debug=True)
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=10000)
